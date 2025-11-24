@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PawsAndTails.com</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>PawsAndTails.com</h1>
-    <img src="PAT.png" alt="Cute dogs" />
+    <!-- Circle Image at the top -->
+    <div class="circle-container">
+        <div class="circle-image">
+            <img src="PAT.png" alt="Puppies" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="title">PawsAndTails.com</h1>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+        <a href="#">Contact</a>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Pet Adoption</a>
+        <a href="#">Donate</a>
+    </nav>
+
+    <!-- Left Corner Section -->
+    <div class="left-corner">
+        <h2>Adopt A Furry Friend</h2>
+        <div class="search-boxes">
+            <input type="text" placeholder="Dog's Type" class="search-input" />
+            <button class="search-button">Search</button>
+        </div>
+    </div>
+
+    <!-- Animals Available For You -->
+    <h2 class="section-title">Animals Available For You</h2>
+    <div class="dog-cards">
+        <div class="dog-card">Image 1</div>
+        <div class="dog-card">Image 2</div>
+        <div class="dog-card">Image 3</div>
+    </div>
+    
+    <!-- Include your JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
