@@ -31,8 +31,8 @@
     <div class="left-corner">
       <h2>Adopt A Furry Friend</h2>
       <div class="search-boxes">
-        <input type="text" placeholder="Dog's Type" class="search-input" />
-        <button class="search-button">Search</button>
+        <input type="text" placeholder="Dog's Type" id="dog-search" class="search-input" />
+        <button id="search-button" class="search-button">Search</button>
       </div>
     </div>
 
@@ -72,7 +72,37 @@
     </div>
   </div>
 
-  <!-- Include your JavaScript -->
-  <script src="script.js"></script>
+<!-- Include your JavaScript -->
+<script>
+  // Existing smooth scroll for nav links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Breed redirect logic
+  document.getElementById('search-button').addEventListener('click', () => {
+    const query = document.getElementById('dog-search').value.trim().toLowerCase();
+
+    const breedPages = {
+      'affenpinscher': 'Affenpinscher.html',
+      'labrador retriever': 'labrador.html',
+      'beagle': 'beagle.html',
+      'poodle': 'poodle.html'
+      // Add more breeds as needed
+    };
+
+    if (breedPages[query]) {
+      window.location.href = breedPages[query];
+    } else {
+      alert('Breed not found or page not available.');
+    }
+  });
+</script>
 </body>
 </html>
