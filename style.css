@@ -1,10 +1,10 @@
 /* Define your color palette */
 :root {
-    --color1: #6B4F3B; /* Dark brown */
-    --color2: #D2A679; /* Light brown */
-    --color3: #F5D6B4; /* Beige */
-    --background-color: #ffffff; /* White */
-    --border-color: #000000; /* Black for borders */
+    --color1: #595336; /* Dark brown */
+    --color2: #D99B66; /* Light brown */
+    --color3: #F2CEAE; /* Beige */
+    --background-color: #BF9075; /* White */
+    --border-color: #52E0DS; /* Black for borders */
     --primary-font: Arial, sans-serif;
 }
 
