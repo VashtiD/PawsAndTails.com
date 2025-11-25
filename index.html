@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PawsAndTails.com</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawsAndTails.com</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
     <!-- Circle Image at the top -->
     <div class="circle-container">
-        <div class="circle-image">
-            <img src="Dogs.png" alt="Puppies" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
-        </div>
+      <div class="circle-image">
+        <img src="Dogs.png" alt="Puppies" />
+      </div>
     </div>
 
     <!-- Title -->
@@ -19,31 +20,59 @@
 
     <!-- Navigation Links -->
     <nav class="nav-links">
-        <a href="#">Contact</a>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Pet Adoption</a>
-        <a href="#">Donate</a>
+      <a href="#">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Pet Adoption</a>
+      <a href="#">Donate</a>
     </nav>
 
     <!-- Left Corner Section -->
     <div class="left-corner">
-        <h2>Adopt A Furry Friend</h2>
-        <div class="search-boxes">
-            <input type="text" placeholder="Dog's Type" class="search-input" />
-            <button class="search-button">Search</button>
-        </div>
+      <h2>Adopt A Furry Friend</h2>
+      <div class="search-boxes">
+        <input type="text" placeholder="Dog's Type" class="search-input" />
+        <button class="search-button">Search</button>
+      </div>
     </div>
 
     <!-- Animals Available For You -->
     <h2 class="section-title">Animals Available For You</h2>
     <div class="dog-cards">
-        <div class="dog-card">Image 1</div>
-        <div class="dog-card">Image 2</div>
-        <div class="dog-card">Image 3</div>
+      <!-- Dog Card 1 -->
+      <div class="dog-card">
+        <img src="dog1.jpg" alt="Dog 1" />
+        <div class="dog-info">
+          <h3>Buddy</h3>
+          <p>Age: 2 years</p>
+          <p>Breed: Labrador Retriever</p>
+          <button class="adopt-button">Adopt Me</button>
+        </div>
+      </div>
+      <!-- Dog Card 2 -->
+      <div class="dog-card">
+        <img src="dog2.jpg" alt="Dog 2" />
+        <div class="dog-info">
+          <h3>Max</h3>
+          <p>Age: 3 years</p>
+          <p>Breed: Beagle</p>
+          <button class="adopt-button">Adopt Me</button>
+        </div>
+      </div>
+      <!-- Dog Card 3 -->
+      <div class="dog-card">
+        <img src="dog3.jpg" alt="Dog 3" />
+        <div class="dog-info">
+          <h3>Lucy</h3>
+          <p>Age: 1.5 years</p>
+          <p>Breed: Poodle</p>
+          <button class="adopt-button">Adopt Me</button>
+        </div>
+      </div>
     </div>
-    
-    <!-- Include your JavaScript -->
-    <script src="script.js"></script>
+  </div>
+
+  <!-- Include your JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
