@@ -40,8 +40,8 @@ body {
 }
 
 .circle-image img {
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 75%;
     object-fit: cover; /* or 'contain' depending on your preference */
 }
 
