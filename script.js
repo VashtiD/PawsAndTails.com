@@ -1,59 +1,48 @@
-// script.js
+// Wait for DOM content to load
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+  // Search breed redirect
+  document.getElementById('search-button').addEventListener('click', () => {
+    const query = document.getElementById('dog-search').value.trim().toLowerCase();
+    const breedPages = {
+      'fluffy': 'Fluffy.html',
+      'pebbles': 'Pebbles.html',
+      'angelo': 'Angelo.html'
+    };
+    if (breedPages[query]) {
+      window.location.href = breedPages[query];
+    } else {
+      alert('Breed not found or page not available.');
     }
   });
-});
 
-// Animate dog cards on scroll (fade in)
-const dogCards = document.querySelectorAll('.dog-card');
-
-const observerOptions = {
-  threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = 'translateY(0)';
-      obs.unobserve(entry.target);
-    }
+  // Handle Adopt Me! button clicks
+  document.querySelectorAll('.adopt-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert('Please sign in to adopt a pet.');
+      // Show the sign-in form
+      document.getElementById('adoption-signin').style.display = 'block';
+    });
   });
-}, observerOptions);
 
-// Initialize dog cards hidden
-dogCards.forEach(card => {
-  card.style.opacity = 0;
-  card.style.transform = 'translateY(20px)';
-  card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-  observer.observe(card);
-});
-
-// Expand search input on focus
-const searchInput = document.querySelector('.search-input');
-
-searchInput.addEventListener('focus', () => {
-  searchInput.style.transition = 'width 0.4s ease';
-  searchInput.style.width = '200%';
-});
-searchInput.addEventListener('blur', () => {
-  searchInput.style.transition = 'width 0.4s ease';
-  searchInput.style.width = '100%';
-});
-
-// Hover effects on dog cards
-document.querySelectorAll('.dog-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.boxShadow = '0 8px 20px rgba(0,0,0,0.3)';
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-  });
+  // Sign-up form submission
+  const adoptForm = document.getElementById('adopt-signin-form');
+  if (adoptForm) {
+    adoptForm.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for signing up! We will contact you soon.');
+      adoptForm.reset();
+      document.getElementById('adoption-signin').style.display = 'none';
+    });
+  }
 });
