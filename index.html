@@ -20,15 +20,15 @@
 
     <!-- Navigation Links -->
     <nav class="nav-links">
-      <a href="#">Contact</a>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Pet Adoption</a>
-      <a href="#">Donate</a>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#adopt">Pet Adoption</a>
+      <a href="#animals">Animals Available For You</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <!-- Left Corner Section -->
-    <div class="left-corner">
+    <div class="left-corner" id="adopt">
       <h2>Adopt A Furry Friend</h2>
       <div class="search-boxes">
         <input type="text" placeholder="Dog's Type" id="dog-search" class="search-input" />
@@ -37,72 +37,121 @@
     </div>
 
     <!-- Animals Available For You -->
-    <h2 class="section-title">Animals Available For You</h2>
+    <h2 class="section-title" id="animals">Animals Available For You</h2>
     <div class="dog-cards">
-      <!-- Dog Card 1 -->
+      <!-- Dog Card 1: Fluffy -->
       <div class="dog-card">
-        <img src="dog1.jpg" alt="Dog 1" />
+        <img src="Fluffy.png" alt="Fluffy" />
         <div class="dog-info">
-          <h3>Buddy</h3>
+          <h3>Fluffy</h3>
           <p>Age: 2 years</p>
-          <p>Breed: Labrador Retriever</p>
-          <button class="adopt-button">Adopt Me</button>
+          <p>Breed: Shih Tzu</p>
+          <button class="adopt-button">Adopt Me!</button>
         </div>
       </div>
-      <!-- Dog Card 2 -->
+      <!-- Dog Card 2: Pebbles -->
       <div class="dog-card">
-        <img src="dog2.jpg" alt="Dog 2" />
+        <img src="Pebbles.png" alt="Pebbles" />
         <div class="dog-info">
-          <h3>Max</h3>
+          <h3>Pebbles</h3>
           <p>Age: 3 years</p>
           <p>Breed: Beagle</p>
-          <button class="adopt-button">Adopt Me</button>
+          <button class="adopt-button">Adopt Me!</button>
         </div>
       </div>
-      <!-- Dog Card 3 -->
+      <!-- Dog Card 3: Angelo -->
       <div class="dog-card">
-        <img src="dog3.jpg" alt="Dog 3" />
+        <img src="Angelo.png" alt="Angelo" />
         <div class="dog-info">
-          <h3>Lucy</h3>
-          <p>Age: 1.5 years</p>
-          <p>Breed: Poodle</p>
-          <button class="adopt-button">Adopt Me</button>
+          <h3>Angelo</h3>
+          <p>Age: 1 year</p>
+          <p>Breed: Labrador</p>
+          <button class="adopt-button">Adopt Me!</button>
         </div>
       </div>
     </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <h2>About Us</h2>
+      <p>
+        PawsAndTails.com is dedicated to helping dogs find loving homes.
+        We are passionate about animal welfare and work tirelessly to connect
+        rescue dogs with caring families. Our mission is to ensure every dog
+        gets the love and care they deserve.
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:Vashtidalchand@gmail.com" class="email-link">Vashtidalchand@gmail.com</a></p>
+    </section>
   </div>
 
-<!-- Include your JavaScript -->
-<script>
-  // Existing smooth scroll for nav links
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
+  <!-- Pet Adoption Sign-in Page -->
+  <div id="adoption-signin" style="display:none;">
+    <h2>Pet Adoption Sign-In</h2>
+    <form id="signup-form" class="signup-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Breed redirect logic
+    document.getElementById('search-button').addEventListener('click', () => {
+      const query = document.getElementById('dog-search').value.trim().toLowerCase();
+
+      const breedPages = {
+        'fluffy': 'Fluffy.html',
+        'pebbles': 'Pebbles.html',
+        'angelo': 'Angelo.html'
+      };
+
+      if (breedPages[query]) {
+        window.location.href = breedPages[query];
+      } else {
+        alert('Breed not found or page not available.');
       }
     });
-  });
 
-  // Breed redirect logic
-  document.getElementById('search-button').addEventListener('click', () => {
-    const query = document.getElementById('dog-search').value.trim().toLowerCase();
+    // Optional: show pet adoption sign-in page
+    // For simplicity, clicking "Adopt Me!" can show the sign-in form
+    document.querySelectorAll('.adopt-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Please sign in to adopt a pet.');
+        // For demo, show sign-in form
+        document.getElementById('adoption-signin').style.display = 'block';
+      });
+    });
 
-    const breedPages = {
-      'affenpinscher': 'Affenpinscher.html',
-      'labrador retriever': 'labrador.html',
-      'beagle': 'beagle.html',
-      'poodle': 'poodle.html'
-      // Add more breeds as needed
-    };
-
-    if (breedPages[query]) {
-      window.location.href = breedPages[query];
-    } else {
-      alert('Breed not found or page not available.');
-    }
-  });
-</script>
+    // Sign-up form handler
+    document.getElementById('signup-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for signing up! We will contact you soon.');
+      document.getElementById('adoption-signin').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
