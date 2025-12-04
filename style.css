@@ -1,192 +1,253 @@
 /* Define your color palette */
 :root {
-    --color1: #595336; /* Dark brown */
-    --color2: #D99B66; /* Light brown */
-    --color3: #F2CEAE; /* Beige */
-    --background-color: #BF9075; /* Main background */
-    --border-color: #52E0DS; /* Border color (fix to #52E0D9) */
-    --primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --color1: #595336; /* Dark brown */
+  --color2: #D99B66; /* Light brown */
+  --color3: #F2CEAE; /* Beige */
+  --background-color: #BF9075; /* Main background */
+  --border-color: #52E0D9; /* Fixed border color */
+  --primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body styles with background color and font */
+/* Body styles */
 body {
-    font-family: var(--primary-font);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #333;
+  font-family: var(--primary-font);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  width: 100%;
 }
 
 /* Circle at top */
 .circle-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .circle-image {
-    width: 250px;
-    height: 250px;
-    background-color: var(--color3);
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 250px;
+  height: 250px;
+  background-color: var(--color3);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .circle-image img {
-    width: 75%;
-    height: 75%;
-    object-fit: cover; /* or 'contain' depending on your preference */
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
 }
 
 /* Title styling */
 .title {
-    text-align: center;
-    font-size: 3em;
-    margin: 10px 0;
-    font-family: 'Arial Black', sans-serif;
-    color: var(--color1);
-    letter-spacing: 2px;
+  text-align: center;
+  font-size: 3em;
+  margin: 10px 0;
+  font-family: 'Arial Black', sans-serif;
+  color: var(--color1);
+  letter-spacing: 2px;
 }
 
 /* Navigation links */
 .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--color1);
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  color: var(--color1);
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-    background-color: var(--color2);
-    color: #fff;
+  background-color: var(--color2);
+  color: #fff;
 }
 
-/* Left Corner Section */
+/* Left corner section */
 .left-corner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    max-width: 350px;
-    width: 100%;
-    text-align: center;
-    background-color: #fff; /* Light background for contrast */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .left-corner h2 {
-    margin-bottom: 15px;
-    color: var(--color1);
-    font-size: 1.8em;
+  margin-bottom: 15px;
+  color: var(--color1);
+  font-size: 1.8em;
 }
 
+/* Search box styles */
 .search-boxes {
-    display: flex;
-    gap: 10px;
-    width: 100%;
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
 
 .search-input {
-    padding: 10px;
-    border: 2px solid var(--border-color);
-    border-radius: 4px;
-    flex: 1;
-    font-size: 1em;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  flex: 1;
+  font-size: 1em;
+  transition: width 0.4s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  width: 200%;
 }
 
 .search-button {
-    padding: 10px 15px;
-    border: 2px solid var(--border-color);
-    background-color: var(--color2);
-    color: #fff;
-    cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  padding: 10px 15px;
+  border: 2px solid var(--border-color);
+  background-color: var(--color2);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .search-button:hover {
-    background-color: #b87b4d; /* darker shade for hover effect */
+  background-color: #b87b4d;
 }
 
-/* Section Title */
+/* Section title styles */
 .section-title {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: var(--color1);
-    font-family: 'Arial Black', sans-serif;
-    letter-spacing: 1px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: var(--color1);
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* Dog cards container */
 .dog-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  padding: 10px;
 }
 
-/* Individual dog card styling with images and details */
+/* Dog card styles */
 .dog-card {
-    width: 250px;
-    background-color: #fff; /* White background for cards */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 1px solid #ddd;
-    transition: transform 0.2s, box-shadow 0.2s;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  /* For animation: start hidden */
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Hover effect on dog cards */
 .dog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Placeholder for image in dog card */
 .dog-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
-/* Dog info section inside card */
 .dog-info {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 .dog-info h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.4em;
-    color: var(--color1);
+  margin: 10px 0 5px 0;
+  font-size: 1.4em;
+  color: var(--color1);
 }
 
 .dog-info p {
-    font-size: 0.95em;
-    color: #555;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* About Us section styles */
+.about-section {
+  max-width: 800px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+
+.about-section h2 {
+  text-align: center;
+  color: var(--color1);
+}
+
+.about-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* Contact section styles */
+.contact-section {
+  max-width: 600px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: var(--color1);
+}
+
+.email-link {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--color1);
+  text-decoration: none;
+}
+
+.email-link:hover {
+  color: var(--color2);
 }
